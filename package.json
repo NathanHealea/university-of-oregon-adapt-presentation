@@ -1,0 +1,17 @@
+{
+  "name": "grimify-presentation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Marp-based slide deck for Grimify.",
+  "scripts": {
+    "dev": "node scripts/run.mjs dev",
+    "build": "node scripts/run.mjs build",
+    "pdf": "node scripts/run.mjs pdf",
+    "pptx": "node scripts/run.mjs pptx",
+    "list": "node scripts/run.mjs list",
+    "help": "node scripts/run.mjs help"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.2"
+  }
+}
