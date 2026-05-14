@@ -1,5 +1,6 @@
 ## Marp CLI configuration
 ## https://github.com/marp-team/marp-cli#configuration-file
 allowLocalFiles: true
+themeSet: src/theme.css
 options:
   html: true
