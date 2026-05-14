@@ -4,12 +4,10 @@
   "private": true,
   "description": "Marp-based slide deck for Grimify.",
   "scripts": {
-    "dev": "node scripts/run.mjs dev",
-    "build": "node scripts/run.mjs build",
-    "pdf": "node scripts/run.mjs pdf",
-    "pptx": "node scripts/run.mjs pptx",
-    "list": "node scripts/run.mjs list",
-    "help": "node scripts/run.mjs help"
+    "dev": "marp --watch --server src/",
+    "build": "marp src/deck.md --output dist/deck.html",
+    "pdf": "marp src/deck.md --output dist/deck.pdf",
+    "pptx": "marp src/deck.md --output dist/deck.pptx"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.1.2"

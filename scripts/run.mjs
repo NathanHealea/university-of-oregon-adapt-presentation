@@ -55,15 +55,18 @@ function pickTarget(args) {
 }
 
 function buildMarpArgs(action, targetDir, deckPath, outDir) {
+  // Flags previously lived in .marprc.yml; folding them in here keeps the
+  // CLI invocation self-contained.
+  const common = ['--html', '--allow-local-files'];
   switch (action) {
     case 'dev':
-      return ['--watch', '--server', targetDir];
+      return [...common, '--watch', '--server', targetDir];
     case 'build':
-      return [deckPath, '--output', join(outDir, 'deck.html')];
+      return [...common, '--output', join(outDir, 'deck.html'), deckPath];
     case 'pdf':
-      return [deckPath, '--output', join(outDir, 'deck.pdf'), '--allow-local-files'];
+      return [...common, '--output', join(outDir, 'deck.pdf'), deckPath];
     case 'pptx':
-      return [deckPath, '--output', join(outDir, 'deck.pptx'), '--allow-local-files'];
+      return [...common, '--output', join(outDir, 'deck.pptx'), deckPath];
     default:
       return null;
   }
