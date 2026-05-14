@@ -5,13 +5,27 @@ paginate: true
 size: 16:9
 ---
 
+<style scoped>
+  section {
+    justify-content:center;
+    align-items:center;
+  }
+</style>
+
 # From Prompt to Product
 
-Using Claude to ship a feature-rich app — one release at a time.
+Using Claude to ship a feature-rich app — from prompt to application.
 
 alpha.grimify.app → beta.grimify.app → grimify.app
 
 ---
+
+<style scoped>
+  section {
+    justify-content:center;
+    /* align-items:center; */
+  }
+</style>
 
 ![bg left:40%](./assets/studio-ghibli-nathan-healea-square-512x512.png)
 
@@ -80,23 +94,21 @@ Each version is a deployed environment — not a branch, not a slide. Claude was
 
 The first version that proved the idea could exist at all.
 
-- **Paint Data & Search** - paint/brand/hue data model, seed catalog, search by name, hex, or brand
-- **Interactive Color Wheel** - paints rendered by hue and lightness, zoom + pan, paint detail view
-- **Color schemas** - complementary, split complementary, analogous color indicators.
+- **Paint Data & Search** — paint/brand/hue data model, seed catalog, search by name, hex, or brand
+- **Interactive Color Wheel** — paints rendered by hue and lightness, zoom + pan, paint detail view
+- **Color Schemes** — complementary, split-complementary, and analogous color indicators
 
-### More Features
+### What Came Next
 
-- **Improved Paint Catalog & Data** - more paints, better color information
-- **Personal Collection** - Users should be able to catalog the colors they have, easily identify there colors on color wheel.
-- **Better Filters** - Users should be able to filter by: brands, color scheme, own collection 
-
+- **Improved Paint Catalog & Data** — more paints, better color information
+- **Personal Collection** — users can catalog the colors they own and identify them on the color wheel
+- **Better Filters** — by brand, color scheme, and owned collection
 
 _LINK: [alpha.grimify.app](https://alpha.grimify.app)_
 
 ---
 
 ![bg left:40% 80%](./assets/beta-grimify-app.png)
-
 
 ## beta.grimify.app - Expansion
 
@@ -108,16 +120,16 @@ Once the foundation was real, then the features expanded, problems started to ar
 - **Color wheel, refined** — HSL wheel, Itten segment boundaries, brand rings & halos, filter by brand / collection / owned
 
 ### Problems
+
 - **User Collection** - Utilized the browser storage, no backend database.
 - **User Accounts** - Without a user account, profiles, collections, could not be saved or shared.
-- **Data** - Expanding the paint catalog, data, statics files started to become large and needed to load over 2K paints at once.    
+- **Data** — expanding the paint catalog meant static files grew large, requiring over 2K paints to load at once
 
 _LINK: [beta.grimify.app](https://beta.grimify.app)_
 
 ---
 
 ![bg right:40% 80%](./assets/grimify-app.png)
-
 
 ## grimify.app - Polish
 
@@ -134,7 +146,7 @@ _LINK: [grimify.app](https://grimify.app)_
 
 ## What Claude Actually Made Possible
 
-Three deployed environments, dozens of features — built solo, on nights and weekends. None of it works without these three things:
+Three deployed environments, dozens of features — built solo, on nights and weekends. None of it works without these two things:
 
 - **`CLAUDE.md` as the project contract** — tech stack, domain-module structure, naming conventions, workflow routing. Claude reads it before every command.
 - **A four-command spine** — `/plan` writes the feature doc, `/implement` walks the diff one commit at a time inside a worktree, `/stage` runs build + lint and opens the PR, `/release` cleans up after merge.
@@ -143,8 +155,27 @@ The same pattern is now what I reach for at work — different remote, same musc
 
 _LINK: [github - claude](https://github.com/NathanHealea/claude)_
 
-
 ---
+
+<style scoped>
+  section {
+    justify-content:center;
+    align-items:center;
+  }
+
+  section h2 {
+    border: none;
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    letter-spacing: -0.02em;
+    color: var(--color-accent);
+    margin: 0 0 16px;
+    /* Gold glow */
+    text-shadow:
+      0 0 24px oklch(72% 0.16 50 / 0.6),
+      0 0 48px oklch(72% 0.16 50 / 0.25);
+  }
+</style>
 
 ## Thanks
 
