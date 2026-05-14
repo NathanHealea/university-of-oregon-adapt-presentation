@@ -40,6 +40,22 @@ alpha.grimify.app → beta.grimify.app → grimify.app
 ---
 
 <style scoped>
+  section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+</style>
+
+#### Content Warning
+
+**Weapons · Fantasy Gore · Grimdark Themes**
+
+The following slides reference Warhammer miniature painting, which includes fantasy violence, weapons, and grimdark imagery.
+
+---
+
+<style scoped>
   blockquote,
   blockquote p,
   blockquote li { font-size: 0.625rem; line-height: 1.4; }
