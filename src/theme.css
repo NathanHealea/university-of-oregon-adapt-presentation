@@ -2,24 +2,56 @@
 @import 'default';
 
 /* ── Design tokens ───────────────────────────────────────────── */
+:root {
+  /* Dark background palette */
+  --color-background:  oklch(11% 0.02  258);
+  --color-surface:     oklch(17% 0.025 258);
+  --color-border:      oklch(30% 0.03  258);
+
+  /* Text */
+  --color-base-content: oklch(88% 0.01 258);
+  --color-neutral:      oklch(60% 0.014 258);
+
+  /* Brand */
+  --color-primary: oklch(68% 0.24 277);   /* vibrant blue-purple */
+  --color-accent:  oklch(72% 0.16 50);    /* amber/gold — metallic */
+
+  /* Typography — untouched */
+  --font-size-base: 16px;
+  --font-size-h4: 20px;
+  --font-size-h3: 24px;
+  --font-size-h2: 28px;
+  --font-size-h1: 32px;
+
+  --line-height-base: 20px;
+  --line-height-h4: 30px;
+  --line-height-h3: 42px;
+  --line-height-h2: 56px;
+  --line-height-h1: 72px;
+
+  /* Override default theme color variables */
+  --color-foreground:       var(--color-base-content);
+  --color-highlight-heading: var(--color-accent);
+  --color-background-code:  oklch(20% 0.025 258);
+  --color-highlight:        var(--color-primary);
+}
+
+/* ── Slide canvas ────────────────────────────────────────────── */
 section {
-  --color-base-content: oklch(20% 0.016 258);
-  --color-primary: oklch(45% 0.24 277);
-  --color-neutral: oklch(50% 0.014 258);
-
-  --font-size-base: 1rem;
-  --font-size-h4: 1.25rem;
-  --font-size-h3: 1.5rem;
-  --font-size-h2: 1.75rem;
-  --font-size-h1: 2rem;
-
-  --line-height-base: 1.25;
-  --line-height-h4: 1.5;
-  --line-height-h3: 1.75;
-  --line-height-h2: 2;
-  --line-height-h1: 2.25;
-
+  display: flex;
+  justify-content: flex-start;
   color: var(--color-base-content);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--color-background);
+  /* Subtle tech grid */
+  background-image:
+    linear-gradient(oklch(100% 0 0 / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(100% 0 0 / 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
+  /* Golden inset frame */
+  box-shadow: inset 0 0 0 3px oklch(72% 0.16 50 / 0.25);
+  padding: 48px 56px;
 }
 
 /* ── Typography overrides ────────────────────────────────────── */
@@ -27,21 +59,30 @@ section h1 {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
   letter-spacing: -0.02em;
-  color: var(--color-primary);
-  margin: 0 0 1rem;
+  color: var(--color-accent);
+  margin: 0 0 16px;
+  /* Gold glow */
+  text-shadow:
+    0 0 24px oklch(72% 0.16 50 / 0.6),
+    0 0 48px oklch(72% 0.16 50 / 0.25);
 }
 
 section h2 {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
   letter-spacing: -0.015em;
-  margin: 0 0 0.75rem;
+  color: var(--color-base-content);
+  margin: 0 0 12px;
+  /* Paint-stroke left accent */
+  border-left: 4px solid var(--color-primary);
+  padding-left: 12px;
 }
 
 section h3 {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
-  margin: 1rem 0 0.5rem;
+  color: var(--color-primary);
+  margin: 16px 0 8px;
 }
 
 section h4 {
@@ -50,25 +91,101 @@ section h4 {
   color: var(--color-neutral);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0.75rem 0 0.5rem;
+  margin: 12px 0 8px;
 }
 
 section small {
-  font-size: 0.75rem;
+  font-size: 12px;
   line-height: 1.4;
   color: var(--color-neutral);
   opacity: 0.85;
+}
+
+section a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+section a:hover {
+  color: var(--color-accent);
+}
+
+section strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+section em {
+  color: oklch(75% 0.12 277);
+}
+
+/* ── Blockquote ──────────────────────────────────────────────── */
+section blockquote {
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 4px 4px 0;
+  padding: 8px 16px;
+  margin: 8px 0;
+  color: var(--color-neutral);
+}
+
+/* ── Code ────────────────────────────────────────────────────── */
+section code {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 14px;
+}
+
+section pre {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+
+section pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-base-content);
 }
 
 /* ── Table overrides ─────────────────────────────────────────── */
 section table {
   table-layout: fixed;
   width: 100%;
+  border-collapse: collapse;
 }
 
 section table,
 section table th,
 section table td {
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 1.6;
+}
+
+section table th {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  padding: 6px 10px;
+}
+
+section table td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 6px 10px;
+}
+
+section table tr:nth-child(even) td {
+  background: oklch(100% 0 0 / 0.02);
+}
+
+/* ── Pagination ──────────────────────────────────────────────── */
+section::after {
+  color: var(--color-neutral);
+  font-size: 12px;
 }
